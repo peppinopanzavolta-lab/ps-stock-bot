@@ -1,0 +1,16 @@
+[
+  {
+    "name": "PlayStation 5 Pro",
+    "url": "https://www.playstation.com/it-it/ps5/ps5-pro/buy-now/"
+  },
+  {
+    "name": "Offerte hardware PlayStation",
+    "url": "https://www.playstation.com/it-it/store/hardware/deals/",
+    "mode": "deal"
+  },
+  {
+    "name": "Bundle e console PS5",
+    "url": "https://www.playstation.com/it-it/consoles/ps5/shop-all/",
+    "mode": "bundle"
+  }
+]
