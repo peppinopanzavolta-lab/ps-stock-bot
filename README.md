@@ -47,4 +47,4 @@ Condivisioni future o fork del repository potrebbero esporre dati sensibili:
 mantieni token e chat ID esclusivamente nei secrets GitHub.
 
 Per aggiungere un prodotto, inserisci un oggetto `{ "name": "...", "url": "..." }`
-in `products.json`. Di default è monitorata la PS5 Pro sulla sua pagina ufficiale.
+in `products.json`. Di default sono monitorate la PS5 Pro e la PS5 Slim con unità disco sulle rispettive pagine ufficiali.

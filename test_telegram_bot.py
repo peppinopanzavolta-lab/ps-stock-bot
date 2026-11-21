@@ -8,6 +8,13 @@ def test_ps5_pro_current_status():
     assert status == "unavailable"
 
 
+def test_ps5_slim_disc_current_status():
+    status = get_status(
+        "https://direct.playstation.com/it-it/buy-consoles/playstation5-console-1-tb"
+    )
+    assert status == "unavailable"
+
+
 def test_deal_snapshot_is_not_empty():
     snapshot = get_page_snapshot(
         "https://www.playstation.com/it-it/store/hardware/deals/",
