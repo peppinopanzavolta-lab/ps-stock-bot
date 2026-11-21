@@ -1,4 +1,4 @@
-from telegram_bot import get_page_snapshot, get_status
+from telegram_bot import classify_status, get_page_snapshot, get_status
 
 
 def test_ps5_pro_current_status():
@@ -21,3 +21,11 @@ def test_deal_snapshot_is_not_empty():
         "deal",
     )
     assert len(snapshot) == 64
+
+
+def test_status_handles_different_available_wording():
+    assert classify_status("Prodotto disponibile - Add to cart") == "available"
+
+
+def test_status_handles_different_unavailable_wording():
+    assert classify_status("Al momento non disponibile") == "unavailable"

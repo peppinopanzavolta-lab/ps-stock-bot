@@ -14,20 +14,37 @@ from bs4 import BeautifulSoup
 UNAVAILABLE_MARKERS = (
     "scorte attualmente esaurite",
     "attualmente esaurite",
+    "attualmente esaurito",
+    "scorte esaurite",
     "attualmente non disponibile",
+    "al momento non disponibile",
+    "momentaneamente non disponibile",
+    "esaurito",
     "non disponibile",
     "out of stock",
     "sold out",
     "temporarily unavailable",
+    "currently unavailable",
 )
 
 AVAILABLE_MARKERS = (
     "aggiungi al carrello",
+    "aggiungi alla cesta",
     "acquista ora",
+    "compra ora",
     "buy now",
     "add to cart",
     "continua ad acquistare",
 )
+
+
+def classify_status(text: str) -> str:
+    normalized = re.sub(r"\s+", " ", text.lower())
+    if any(marker in normalized for marker in UNAVAILABLE_MARKERS):
+        return "unavailable"
+    if any(marker in normalized for marker in AVAILABLE_MARKERS):
+        return "available"
+    return "unknown"
 
 
 def load_env() -> None:
@@ -55,13 +72,7 @@ def get_status(url: str) -> str:
 
     soup = BeautifulSoup(response.text, "html.parser")
     text = " ".join(soup.stripped_strings).lower()
-    text = re.sub(r"\s+", " ", text)
-
-    if any(marker in text for marker in UNAVAILABLE_MARKERS):
-        return "unavailable"
-    if any(marker in text for marker in AVAILABLE_MARKERS):
-        return "available"
-    return "unknown"
+    return classify_status(text)
 
 
 def get_page_snapshot(url: str, mode: str) -> str:
