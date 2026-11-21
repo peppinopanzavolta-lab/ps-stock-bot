@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
+    inputs:
+      test_telegram:
+        description: "Invia un messaggio Telegram di prova invece del controllo stock"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -30,7 +36,12 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           STATE_FILE: state.json
-        run: python telegram_bot.py --once
+        run: |
+          if [ "${{ inputs.test_telegram }}" = "true" ]; then
+            python telegram_bot.py --test-telegram
+          else
+            python telegram_bot.py --once
+          fi
 
       - name: Save state
         run: |
