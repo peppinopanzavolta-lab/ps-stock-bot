@@ -8,6 +8,16 @@
     "url": "https://direct.playstation.com/it-it/buy-consoles/playstation5-console-1-tb"
   },
   {
+    "name": "Sezione Store PS5",
+    "url": "https://www.playstation.com/it-it/ps5/",
+    "mode": "bundle"
+  },
+  {
+    "name": "Novità PlayStation Store",
+    "url": "https://store.playstation.com/it-it/pages/latest",
+    "mode": "store"
+  },
+  {
     "name": "Offerte hardware PlayStation",
     "url": "https://www.playstation.com/it-it/store/hardware/deals/",
     "mode": "deal"

@@ -90,6 +90,11 @@ def get_page_snapshot(url: str, mode: str) -> str:
             text,
         ):
             records.append(text)
+        elif mode == "store" and re.search(
+            r"ps5|playstation 5|ps5 pro",
+            text,
+        ):
+            records.append(text)
 
     normalized = "\n".join(sorted(set(records)))
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
@@ -130,7 +135,12 @@ def monitor_once(products: list[dict], state_path: Path) -> dict:
 
         previous = state.get(name)
         if mode and previous is not None and previous != status:
-            label = "Sconti PlayStation" if mode == "deal" else "Bundle/console PlayStation"
+            labels = {
+                "deal": "Sconti PlayStation",
+                "bundle": "Bundle/console PlayStation",
+                "store": "Novità PlayStation Store",
+            }
+            label = labels.get(mode, "Sezione PlayStation")
             send_telegram(
                 f"🔔 CAMBIAMENTO: {label}\n"
                 f"Potrebbe esserci una nuova offerta o disponibilità.\n"
