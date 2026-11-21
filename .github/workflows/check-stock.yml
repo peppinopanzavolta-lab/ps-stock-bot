@@ -18,16 +18,14 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.14"
+          python-version: "3.12"
           cache: pip
-          cache-dependency-path: ps-stock-bot/requirements.txt
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
-        working-directory: ps-stock-bot
         run: pip install -r requirements.txt
 
       - name: Check availability
-        working-directory: ps-stock-bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -35,7 +33,6 @@ jobs:
         run: python telegram_bot.py --once
 
       - name: Save state
-        working-directory: ps-stock-bot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
