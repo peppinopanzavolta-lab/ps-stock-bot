@@ -176,7 +176,7 @@ def main() -> None:
     products = json.loads(products_path.read_text(encoding="utf-8"))
     state_path = Path(os.environ.get("STATE_FILE", "state.json"))
     if not state_path.is_absolute():
-        state_path = Path(__file__).with_name(state_path)
+        state_path = Path(__file__).with_name(os.fspath(state_path))
 
     interval = max(10, int(os.environ.get("POLL_INTERVAL_SECONDS", "60")))
     while True:
