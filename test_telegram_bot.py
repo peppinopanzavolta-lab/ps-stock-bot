@@ -35,3 +35,11 @@ def test_status_handles_exact_unavailable_purchase_wording():
     assert classify_status("Non disponibile per l'acquisto") == "unavailable"
 
 
+def test_bundle_snapshot_tracks_availability_wording():
+    snapshot = get_page_snapshot(
+        "https://www.playstation.com/it-it/consoles/ps5/shop-all/",
+        "bundle",
+    )
+    assert len(snapshot) == 64
+
+
