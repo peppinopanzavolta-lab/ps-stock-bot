@@ -44,3 +44,13 @@ def test_ps5_slim_official_page_current_status():
         "https://www.playstation.com/it-it/ps5/1-tb-disc/"
     )
     assert status == "unavailable"
+
+
+def test_ps5_bundle_pages_current_status():
+    urls = [
+        "https://www.playstation.com/it-it/ps5/1-tb-disc/product/ea-sports-fc-26-bundle/",
+        "https://www.playstation.com/it-it/ps5/1-tb-disc/product/fortnite-flowering-chaos-bundle/",
+        "https://www.playstation.com/it-it/ps5/1-tb-disc/product/two-dualsense-wireless-controllers-bundle/",
+    ]
+    for url in urls:
+        assert get_status(url) in {"available", "unavailable", "unknown"}
