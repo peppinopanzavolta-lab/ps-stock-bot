@@ -56,6 +56,14 @@ def test_ps5_bundle_pages_current_status():
         assert get_status(url) in {"available", "unavailable", "unknown"}
 
 
+def test_27_pdp_products_configured():
+    import json
+    with open("products.json", encoding="utf-8") as file:
+        products = json.load(file)
+    assert len(products) == 27
+    assert all("pdp-redirect" in product["url"] for product in products)
+
+
 def test_catalog_discovery_finds_product_links():
     products = discover_catalog_products(
         "https://www.playstation.com/it-it/consoles/ps5/shop-all/"

@@ -1,22 +1,110 @@
 [
   {
-    "name": "PlayStation 5 Pro",
-    "url": "https://www.playstation.com/it-it/ps5/ps5-pro/buy-now/"
+    "name": "PlayStation 5 Edizione Digitale 825 GB - Marvel's Wolverine Battle Yellow Limited Edition Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01916_79-PS5DIGITALSLOSSE"
   },
   {
-    "name": "PlayStation 5 Slim con lettore",
-    "url": "https://www.playstation.com/it-it/ps5/1-tb-disc/"
+    "name": "Pacchetto PS5 Slim - Ghost of Yotei Gold Limited Edition",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01835_51-PS5GOYGOLDYZWIJE"
   },
   {
-    "name": "PS5 Slim + EA SPORTS FC 26",
-    "url": "https://www.playstation.com/it-it/ps5/1-tb-disc/product/ea-sports-fc-26-bundle/"
+    "name": "PS5 Digital Slim 30 Anniversario Limited Edition",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01834_87-PS5DIGITAL2B3XVE"
   },
   {
-    "name": "PS5 Slim + Fortnite Flowering Chaos",
-    "url": "https://www.playstation.com/it-it/ps5/1-tb-disc/product/fortnite-flowering-chaos-bundle/"
+    "name": "PlayStation 5 Pro Console",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01847_03-PS5PROBASEB2ZIVE"
   },
   {
-    "name": "PS5 Slim + 2 DualSense",
-    "url": "https://www.playstation.com/it-it/ps5/1-tb-disc/product/two-dualsense-wireless-controllers-bundle/"
+    "name": "PS5 1 TB - EA SPORTS FC 26 Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01929_59-PS5CONSOLEKOMN4E"
+  },
+  {
+    "name": "PS5 1 TB - Fortnite Flowering Chaos Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01929_59-PS5CONSOLETBMPGE"
+  },
+  {
+    "name": "PS5 Digital 825 GB - EA SPORTS FC 26 Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01916_79-PS5DIGITALNKV6OE"
+  },
+  {
+    "name": "PS5 Digital 825 GB - Fortnite Flowering Chaos Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01916_79-PS5DIGITALKBNIIE"
+  },
+  {
+    "name": "PS5 1 TB",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01929_59-PS5CONSOLEHB2OYE"
+  },
+  {
+    "name": "PS5 1 TB - 2 DualSense Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01929_59-PS5CONSOLETAPQ3E"
+  },
+  {
+    "name": "PS5 Slim - ASTRO BOT Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01835_51-PS5ASTROBO5LQOTE"
+  },
+  {
+    "name": "PS5 Slim - 2 DualSense Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01835_51-PS5CONSOLEXQCDWE"
+  },
+  {
+    "name": "PS5 Slim - Call of Duty Black Ops 6 Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01835_51-PS5COD6BASNQZJTE"
+  },
+  {
+    "name": "PS5 Slim - Cobalt Star Fortnite Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01835_51-PS5FORTNIT3TFSFE"
+  },
+  {
+    "name": "PS5 Digital Slim - 825 GB",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01916_79-PS5DIGITALKKBAEE"
+  },
+  {
+    "name": "PS5 Digital Slim - ASTRO BOT Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01834_87-PS5DIGITAL45YE5E"
+  },
+  {
+    "name": "PS5 Digital Slim - Call of Duty Black Ops 6 Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01834_87-PS5DIGITAL45KHKE"
+  },
+  {
+    "name": "PS5 Digital Slim - Cobalt Star Fortnite Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01834_87-PS5DIGITALCQQI7E"
+  },
+  {
+    "name": "PS5 Digital Slim",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01834_87-PS5DIGITAL3PVB7E"
+  },
+  {
+    "name": "PS5 Slim",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01835_51-PS5CONSOLEDECL5E"
+  },
+  {
+    "name": "PS5 Pro - 2 TB",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01942_39-PS5PROCHASASIRSE"
+  },
+  {
+    "name": "PS5 Slim + PS Plus Premium 24 mesi",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01835_51-PS5PSPLUSSC2SDGE"
+  },
+  {
+    "name": "PS5 Digital 825 GB - 2 DualSense Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01916_79-PS5DIGITAL2TALIE"
+  },
+  {
+    "name": "PS5 Digital Slim - 2 DualSense Bundle",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01834_87-PS5DIGITALBHM35E"
+  },
+  {
+    "name": "PS5 Ricondizionata Certificata",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE01840_63-PS5GRADEDCEC7XZE"
+  },
+  {
+    "name": "PS5 Digital Ricondizionata Certificata Slim",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE00234_23-PS5GRADEDDMBTOTE"
+  },
+  {
+    "name": "PS5 Ricondizionata Certificata Slim",
+    "url": "https://www.playstation.com/api/pdp-redirect/?locale=it-it&id=PSD001-PSDE00233_59-PS5GRADEDCLIZSLE"
   }
 ]

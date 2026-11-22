@@ -228,15 +228,6 @@ def save_state(path: Path, state: dict) -> None:
 
 def monitor_once(products: list[dict], state_path: Path) -> dict:
     state = load_state(state_path)
-    catalog_url = "https://www.playstation.com/it-it/consoles/ps5/shop-all/"
-    try:
-        discovered = discover_catalog_products(catalog_url)
-        discovered_by_url = {item["url"]: item for item in discovered}
-        for url, item in discovered_by_url.items():
-            if not any(product["url"] == url for product in products):
-                products.append(item)
-    except requests.RequestException as exc:
-        print(f"[WARN] Catalogo PS5: scansione fallita ({exc})", file=sys.stderr)
     configured_names = {product["name"] for product in products}
     state = {name: value for name, value in state.items() if name in configured_names}
     for product in products:

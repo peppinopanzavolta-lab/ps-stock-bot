@@ -47,4 +47,5 @@ Condivisioni future o fork del repository potrebbero esporre dati sensibili:
 mantieni token e chat ID esclusivamente nei secrets GitHub.
 
 Per aggiungere un prodotto, inserisci un oggetto `{ "name": "...", "url": "..." }`
-in `products.json`. Di default sono monitorate solo due schede prodotto specifiche: PS5 Pro e PS5 Slim con unità disco.
+in `products.json`. Sono monitorate separatamente le 27 schede PlayStation indicate nel catalogo `products.json`,
+incluse PS5, PS5 Pro, Digital Edition, bundle e prodotti ricondizionati.
