@@ -119,6 +119,91 @@ def get_page_snapshot(url: str, mode: str) -> str:
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
 
 
+def discover_catalog_products(catalog_url: str) -> list[dict]:
+    response = requests.get(
+        catalog_url,
+        headers={
+            "User-Agent": "Mozilla/5.0 (compatible; PSStockBot/1.0)",
+            "Accept-Language": "it-IT,it;q=0.9,en;q=0.8",
+        },
+        timeout=20,
+    )
+    response.raise_for_status()
+    soup = BeautifulSoup(response.text, "html.parser")
+    products = []
+    seen = set()
+
+    for anchor in soup.find_all("a", href=True):
+        name = " ".join(anchor.stripped_strings)
+        name = re.sub(r"\s+", " ", name).strip()
+        href = anchor["href"].strip()
+        if not href:
+            continue
+        if href.startswith("/"):
+            href = "https://www.playstation.com" + href
+        href = href.split("?")[0]
+
+        is_product = (
+            "/ps5/" in href
+            or "/product/" in href
+            or "/collections/" in href
+            or "/store/hardware/" in href
+        )
+        is_navigation = any(
+            href.endswith(path)
+            for path in (
+                "/it-it/ps5/",
+                "/it-it/ps5/games/",
+                "/it-it/consoles/ps5/shop-all/",
+                "/it-it/store/hardware/",
+            )
+        )
+        if is_product and not is_navigation and href not in seen:
+            seen.add(href)
+            products.append({
+                "name": name or href.rsplit("/", 2)[-2].replace("-", " ").title(),
+                "url": href,
+            })
+
+    for item in list(products):
+        if len(products) >= 50:
+            break
+        try:
+            nested_response = requests.get(
+                item["url"],
+                headers={
+                    "User-Agent": "Mozilla/5.0 (compatible; PSStockBot/1.0)",
+                    "Accept-Language": "it-IT,it;q=0.9,en;q=0.8",
+                },
+                timeout=20,
+            )
+            nested_response.raise_for_status()
+        except requests.RequestException:
+            continue
+
+        nested_soup = BeautifulSoup(nested_response.text, "html.parser")
+        for anchor in nested_soup.find_all("a", href=True):
+            href = anchor["href"].strip()
+            if href.startswith("/"):
+                href = "https://www.playstation.com" + href
+            href = href.split("?")[0]
+            if "/product/" not in href and "/buy-now/" not in href:
+                continue
+            if href in seen:
+                continue
+            seen.add(href)
+            name = " ".join(anchor.stripped_strings)
+            name = re.sub(r"\s+", " ", name).strip()
+            products.append({
+                "name": name or href.rsplit("/", 2)[-2].replace("-", " ").title(),
+                "url": href,
+            })
+            if len(products) >= 50:
+                break
+
+    return products
+
+
 def send_telegram(message: str) -> None:
     token = os.environ["TELEGRAM_BOT_TOKEN"]
     chat_id = os.environ["TELEGRAM_CHAT_ID"]
@@ -142,6 +227,15 @@ def save_state(path: Path, state: dict) -> None:
 
 def monitor_once(products: list[dict], state_path: Path) -> dict:
     state = load_state(state_path)
+    catalog_url = "https://www.playstation.com/it-it/consoles/ps5/shop-all/"
+    try:
+        discovered = discover_catalog_products(catalog_url)
+        discovered_by_url = {item["url"]: item for item in discovered}
+        for url, item in discovered_by_url.items():
+            if not any(product["url"] == url for product in products):
+                products.append(item)
+    except requests.RequestException as exc:
+        print(f"[WARN] Catalogo PS5: scansione fallita ({exc})", file=sys.stderr)
     configured_names = {product["name"] for product in products}
     state = {name: value for name, value in state.items() if name in configured_names}
     for product in products:

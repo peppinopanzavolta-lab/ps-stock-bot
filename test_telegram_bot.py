@@ -1,4 +1,4 @@
-from telegram_bot import classify_status, get_page_snapshot, get_status
+from telegram_bot import classify_status, discover_catalog_products, get_page_snapshot, get_status
 
 
 def test_ps5_pro_current_status():
@@ -54,3 +54,11 @@ def test_ps5_bundle_pages_current_status():
     ]
     for url in urls:
         assert get_status(url) in {"available", "unavailable", "unknown"}
+
+
+def test_catalog_discovery_finds_product_links():
+    products = discover_catalog_products(
+        "https://www.playstation.com/it-it/consoles/ps5/shop-all/"
+    )
+    assert isinstance(products, list)
+    assert all(product["url"].startswith("https://") for product in products)
