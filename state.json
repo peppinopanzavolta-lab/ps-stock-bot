@@ -1,29 +1,110 @@
 {
-  "PlayStation 5 Edizione Digitale 825 GB - Marvel's Wolverine Battle Yellow Limited Edition Bundle": "unavailable",
-  "Pacchetto PS5 Slim - Ghost of Yotei Gold Limited Edition": "unavailable",
-  "PS5 Digital Slim 30 Anniversario Limited Edition": "unavailable",
-  "PlayStation 5 Pro Console": "unavailable",
-  "PS5 1 TB - EA SPORTS FC 26 Bundle": "unavailable",
-  "PS5 1 TB - Fortnite Flowering Chaos Bundle": "unavailable",
-  "PS5 Digital 825 GB - EA SPORTS FC 26 Bundle": "unavailable",
-  "PS5 Digital 825 GB - Fortnite Flowering Chaos Bundle": "unavailable",
-  "PS5 1 TB": "unavailable",
-  "PS5 1 TB - 2 DualSense Bundle": "unavailable",
-  "PS5 Slim - ASTRO BOT Bundle": "unavailable",
-  "PS5 Slim - 2 DualSense Bundle": "unavailable",
-  "PS5 Slim - Call of Duty Black Ops 6 Bundle": "available",
-  "PS5 Slim - Cobalt Star Fortnite Bundle": "unavailable",
-  "PS5 Digital Slim - 825 GB": "unavailable",
-  "PS5 Digital Slim - ASTRO BOT Bundle": "unavailable",
-  "PS5 Digital Slim - Call of Duty Black Ops 6 Bundle": "unavailable",
-  "PS5 Digital Slim - Cobalt Star Fortnite Bundle": "unavailable",
-  "PS5 Digital Slim": "unavailable",
-  "PS5 Slim": "unavailable",
-  "PS5 Pro - 2 TB": "unavailable",
-  "PS5 Slim + PS Plus Premium 24 mesi": "unavailable",
-  "PS5 Digital 825 GB - 2 DualSense Bundle": "unavailable",
-  "PS5 Digital Slim - 2 DualSense Bundle": "unavailable",
-  "PS5 Ricondizionata Certificata": "unavailable",
-  "PS5 Digital Ricondizionata Certificata Slim": "unavailable",
-  "PS5 Ricondizionata Certificata Slim": "unavailable"
+  "PlayStation 5 Edizione Digitale 825 GB - Marvel's Wolverine Battle Yellow Limited Edition Bundle": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "Pacchetto PS5 Slim - Ghost of Yotei Gold Limited Edition": {
+    "status": "unavailable",
+    "discount": "0cdf35f598ba2113708b5302fba8af99cd512f4428157f0803194c247b6a9fd6"
+  },
+  "PS5 Digital Slim 30 Anniversario Limited Edition": {
+    "status": "unavailable",
+    "discount": "4d045910b127383e8c6563d38d7e6868a78f2485c137f2c1050fb3980bf91c29"
+  },
+  "PlayStation 5 Pro Console": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 1 TB - EA SPORTS FC 26 Bundle": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 1 TB - Fortnite Flowering Chaos Bundle": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Digital 825 GB - EA SPORTS FC 26 Bundle": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Digital 825 GB - Fortnite Flowering Chaos Bundle": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 1 TB": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 1 TB - 2 DualSense Bundle": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Slim - ASTRO BOT Bundle": {
+    "status": "unavailable",
+    "discount": "022ae7654fcfa4e5185062685896fb64c2fa0461b225d16f960af177e37b7f64"
+  },
+  "PS5 Slim - 2 DualSense Bundle": {
+    "status": "unavailable",
+    "discount": "0cdf35f598ba2113708b5302fba8af99cd512f4428157f0803194c247b6a9fd6"
+  },
+  "PS5 Slim - Call of Duty Black Ops 6 Bundle": {
+    "status": "unavailable",
+    "discount": "0cdf35f598ba2113708b5302fba8af99cd512f4428157f0803194c247b6a9fd6"
+  },
+  "PS5 Slim - Cobalt Star Fortnite Bundle": {
+    "status": "unavailable",
+    "discount": "0cdf35f598ba2113708b5302fba8af99cd512f4428157f0803194c247b6a9fd6"
+  },
+  "PS5 Digital Slim - 825 GB": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Digital Slim - ASTRO BOT Bundle": {
+    "status": "unavailable",
+    "discount": "4d045910b127383e8c6563d38d7e6868a78f2485c137f2c1050fb3980bf91c29"
+  },
+  "PS5 Digital Slim - Call of Duty Black Ops 6 Bundle": {
+    "status": "unavailable",
+    "discount": "4d045910b127383e8c6563d38d7e6868a78f2485c137f2c1050fb3980bf91c29"
+  },
+  "PS5 Digital Slim - Cobalt Star Fortnite Bundle": {
+    "status": "unavailable",
+    "discount": "4d045910b127383e8c6563d38d7e6868a78f2485c137f2c1050fb3980bf91c29"
+  },
+  "PS5 Digital Slim": {
+    "status": "unavailable",
+    "discount": "4d045910b127383e8c6563d38d7e6868a78f2485c137f2c1050fb3980bf91c29"
+  },
+  "PS5 Slim": {
+    "status": "unavailable",
+    "discount": "0cdf35f598ba2113708b5302fba8af99cd512f4428157f0803194c247b6a9fd6"
+  },
+  "PS5 Pro - 2 TB": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Slim + PS Plus Premium 24 mesi": {
+    "status": "unavailable",
+    "discount": "0cdf35f598ba2113708b5302fba8af99cd512f4428157f0803194c247b6a9fd6"
+  },
+  "PS5 Digital 825 GB - 2 DualSense Bundle": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Digital Slim - 2 DualSense Bundle": {
+    "status": "unavailable",
+    "discount": "4d045910b127383e8c6563d38d7e6868a78f2485c137f2c1050fb3980bf91c29"
+  },
+  "PS5 Ricondizionata Certificata": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Digital Ricondizionata Certificata Slim": {
+    "status": "unavailable",
+    "discount": "baacb29bb40794414943c3a324b6db8d3a06410722a7c7f853147684ff8ed45c"
+  },
+  "PS5 Ricondizionata Certificata Slim": {
+    "status": "unavailable",
+    "discount": "7f2d47390bb438ec6a43cf945cc621fb4c2b815aea6537e71ad49bbd1ef33da3"
+  }
 }
