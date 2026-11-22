@@ -29,3 +29,11 @@ def test_status_handles_different_available_wording():
 
 def test_status_handles_different_unavailable_wording():
     assert classify_status("Al momento non disponibile") == "unavailable"
+
+
+def test_raw_html_snapshot_is_hash():
+    snapshot = get_page_snapshot(
+        "https://www.playstation.com/it-it/ps5/ps5-pro/buy-now/",
+        "raw_html",
+    )
+    assert len(snapshot) == 64

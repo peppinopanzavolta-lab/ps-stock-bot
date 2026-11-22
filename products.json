@@ -1,30 +1,32 @@
 [
   {
     "name": "PlayStation 5 Pro",
-    "url": "https://www.playstation.com/it-it/ps5/ps5-pro/buy-now/"
+    "url": "https://www.playstation.com/it-it/ps5/ps5-pro/buy-now/",
+    "mode": "raw_html"
   },
   {
     "name": "PlayStation 5 Slim con lettore",
-    "url": "https://direct.playstation.com/it-it/buy-consoles/playstation5-console-1-tb"
+    "url": "https://direct.playstation.com/it-it/buy-consoles/playstation5-console-1-tb",
+    "mode": "raw_html"
   },
   {
     "name": "Sezione Store PS5",
     "url": "https://www.playstation.com/it-it/ps5/",
-    "mode": "bundle"
+    "mode": "raw_html"
   },
   {
     "name": "Novità PlayStation Store",
     "url": "https://store.playstation.com/it-it/pages/latest",
-    "mode": "store"
+    "mode": "raw_html"
   },
   {
     "name": "Offerte hardware PlayStation",
     "url": "https://www.playstation.com/it-it/store/hardware/deals/",
-    "mode": "deal"
+    "mode": "raw_html"
   },
   {
     "name": "Bundle e console PS5",
     "url": "https://www.playstation.com/it-it/consoles/ps5/shop-all/",
-    "mode": "bundle"
+    "mode": "raw_html"
   }
 ]

@@ -86,6 +86,9 @@ def get_page_snapshot(url: str, mode: str) -> str:
     )
     response.raise_for_status()
 
+    if mode == "raw_html":
+        return hashlib.sha256(response.content).hexdigest()
+
     soup = BeautifulSoup(response.text, "html.parser")
     records = []
     for element in soup.find_all(["li", "article"]):
@@ -150,6 +153,7 @@ def monitor_once(products: list[dict], state_path: Path) -> dict:
                 "deal": "Sconti PlayStation",
                 "bundle": "Bundle/console PlayStation",
                 "store": "Novità PlayStation Store",
+                "raw_html": "Pagina PlayStation",
             }
             label = labels.get(mode, "Sezione PlayStation")
             send_telegram(
