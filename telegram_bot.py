@@ -142,6 +142,8 @@ def save_state(path: Path, state: dict) -> None:
 
 def monitor_once(products: list[dict], state_path: Path) -> dict:
     state = load_state(state_path)
+    configured_names = {product["name"] for product in products}
+    state = {name: value for name, value in state.items() if name in configured_names}
     for product in products:
         name = product["name"]
         url = product["url"]

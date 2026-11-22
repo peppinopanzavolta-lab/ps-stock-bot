@@ -6,25 +6,5 @@
   {
     "name": "PlayStation 5 Slim con lettore",
     "url": "https://www.playstation.com/it-it/ps5/1-tb-disc/"
-  },
-  {
-    "name": "Sezione Store PS5",
-    "url": "https://www.playstation.com/it-it/ps5/",
-    "mode": "bundle"
-  },
-  {
-    "name": "Novità PlayStation Store",
-    "url": "https://store.playstation.com/it-it/pages/latest",
-    "mode": "store"
-  },
-  {
-    "name": "Offerte hardware PlayStation",
-    "url": "https://www.playstation.com/it-it/store/hardware/deals/",
-    "mode": "deal"
-  },
-  {
-    "name": "Bundle e console PS5",
-    "url": "https://www.playstation.com/it-it/consoles/ps5/shop-all/",
-    "mode": "bundle"
   }
 ]
