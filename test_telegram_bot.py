@@ -31,3 +31,7 @@ def test_status_handles_different_unavailable_wording():
     assert classify_status("Al momento non disponibile") == "unavailable"
 
 
+def test_status_handles_exact_unavailable_purchase_wording():
+    assert classify_status("Non disponibile per l'acquisto") == "unavailable"
+
+

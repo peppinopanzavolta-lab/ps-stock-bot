@@ -12,6 +12,8 @@ from bs4 import BeautifulSoup
 
 
 UNAVAILABLE_MARKERS = (
+    "non disponibile per l'acquisto",
+    "non disponibile per l’acquisto",
     "scorte attualmente esaurite",
     "attualmente esaurite",
     "attualmente esaurito",
@@ -72,7 +74,10 @@ def get_status(url: str) -> str:
 
     soup = BeautifulSoup(response.text, "html.parser")
     text = " ".join(soup.stripped_strings).lower()
-    return classify_status(text)
+    status = classify_status(text)
+    if status == "unknown" and "direct.playstation.com" in url:
+        return "available"
+    return status
 
 
 def get_page_snapshot(url: str, mode: str) -> str:
