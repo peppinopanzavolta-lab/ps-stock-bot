@@ -144,10 +144,11 @@ def discover_catalog_products(catalog_url: str) -> list[dict]:
         href = href.split("?")[0]
 
         is_product = (
-            "/ps5/" in href
+            (
+                "/ps5/" in href
+                and ("/buy-now/" in href or "/product/" in href)
+            )
             or "/product/" in href
-            or "/collections/" in href
-            or "/store/hardware/" in href
         )
         is_navigation = any(
             href.endswith(path)
