@@ -35,11 +35,12 @@ def test_status_handles_exact_unavailable_purchase_wording():
     assert classify_status("Non disponibile per l'acquisto") == "unavailable"
 
 
-def test_bundle_snapshot_tracks_availability_wording():
-    snapshot = get_page_snapshot(
-        "https://www.playstation.com/it-it/consoles/ps5/shop-all/",
-        "bundle",
+
+
+
+
+def test_ps5_slim_official_page_current_status():
+    status = get_status(
+        "https://www.playstation.com/it-it/ps5/1-tb-disc/"
     )
-    assert len(snapshot) == 64
-
-
+    assert status == "unavailable"

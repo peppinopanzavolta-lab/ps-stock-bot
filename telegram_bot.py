@@ -108,9 +108,7 @@ def get_page_snapshot(url: str, mode: str) -> str:
             r"bundle|console ps5|ps5 pro|edizione",
             text,
         ):
-            status = classify_status(text)
-            availability = "unavailable" if status == "unavailable" else "available"
-            records.append(f"{availability}: {text}")
+            records.append(text)
         elif mode == "store" and re.search(
             r"ps5|playstation 5|ps5 pro",
             text,
