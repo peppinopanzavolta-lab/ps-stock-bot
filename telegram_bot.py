@@ -80,6 +80,28 @@ def get_status(url: str) -> str:
     return status
 
 
+def get_discount_snapshot(url: str) -> str:
+    response = requests.get(
+        url,
+        headers={
+            "User-Agent": "Mozilla/5.0 (compatible; PSStockBot/1.0)",
+            "Accept-Language": "it-IT,it;q=0.9,en;q=0.8",
+        },
+        timeout=20,
+    )
+    response.raise_for_status()
+    soup = BeautifulSoup(response.text, "html.parser")
+    text = " ".join(soup.stripped_strings).lower()
+    text = re.sub(r"\s+", " ", text)
+    matches = re.findall(
+        r"(?:risparmia[^.!?]{0,80}|sconto(?: del| del prezzo)?[^.!?]{0,80}"
+        r"|offerta[^.!?]{0,80}|promozione[^.!?]{0,80})",
+        text,
+    )
+    normalized = "\n".join(sorted(set(matches)))
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
 def get_page_snapshot(url: str, mode: str) -> str:
     response = requests.get(
         url,
@@ -236,6 +258,7 @@ def monitor_once(products: list[dict], state_path: Path) -> dict:
         mode = product.get("mode")
         try:
             status = get_page_snapshot(url, mode) if mode else get_status(url)
+            discount = get_discount_snapshot(url) if not mode else None
         except requests.RequestException as exc:
             print(f"[WARN] {name}: controllo fallito ({exc})", file=sys.stderr)
             continue
@@ -254,13 +277,32 @@ def monitor_once(products: list[dict], state_path: Path) -> dict:
                 f"Potrebbe esserci una nuova offerta o disponibilità.\n"
                 f"Controlla qui:\n{url}"
             )
-        elif status == "available" and previous != "available":
+        elif status == "available" and (
+            (
+                not isinstance(previous, dict)
+                and previous != "available"
+            )
+            or (
+                isinstance(previous, dict)
+                and previous.get("status") != "available"
+            )
+        ):
             send_telegram(
                 f"🎮 DISPONIBILE: {name}\n"
                 f"Controlla subito sul sito ufficiale:\n{url}"
             )
 
-        state[name] = status
+        if isinstance(previous, dict) and previous.get("discount") != discount:
+            send_telegram(
+                f"🏷️ SCONTO/OPZIONE CAMBIATA: {name}\n"
+                f"Controlla prezzo e disponibilità ufficiale:\n{url}"
+            )
+
+        state[name] = (
+            {"status": status, "discount": discount}
+            if not mode
+            else status
+        )
         print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {name}: {status}")
 
     save_state(state_path, state)

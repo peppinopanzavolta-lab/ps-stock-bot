@@ -1,4 +1,10 @@
-from telegram_bot import classify_status, discover_catalog_products, get_page_snapshot, get_status
+from telegram_bot import (
+    classify_status,
+    discover_catalog_products,
+    get_discount_snapshot,
+    get_page_snapshot,
+    get_status,
+)
 
 
 def test_ps5_pro_current_status():
@@ -62,6 +68,13 @@ def test_27_pdp_products_configured():
         products = json.load(file)
     assert len(products) == 27
     assert all("pdp-redirect" in product["url"] for product in products)
+
+
+def test_discount_snapshot_is_hash():
+    snapshot = get_discount_snapshot(
+        "https://www.playstation.com/it-it/ps5/ps5-pro/buy-now/"
+    )
+    assert len(snapshot) == 64
 
 
 def test_catalog_discovery_finds_product_links():
